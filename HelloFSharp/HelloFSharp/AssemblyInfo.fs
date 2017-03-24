@@ -1,4 +1,4 @@
-﻿namespace HelloFSharp1.AssemblyInfo
+﻿namespace HelloFSharp.AssemblyInfo
 
 open System.Resources
 open System.Reflection
@@ -8,11 +8,11 @@ open System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[<assembly: AssemblyTitle("HelloFSharp1")>]
+[<assembly: AssemblyTitle("HelloFSharp")>]
 [<assembly: AssemblyDescription("")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
-[<assembly: AssemblyProduct("HelloFSharp1")>]
+[<assembly: AssemblyProduct("HelloFSharp")>]
 [<assembly: AssemblyCopyright("Copyright ©  2017")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]

@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6b299cfb-e914-4cf3-be5d-62ba9e94a7bc</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>HelloFSharp1</RootNamespace>
+    <RootNamespace>HelloFSharp</RootNamespace>
     <AssemblyName>HelloFSharp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
@@ -42,10 +42,10 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Content Include="packages.config" />
-    <Compile Include="MainPage.xaml.fs" />
+	<Compile Include="MainPage.xaml.fs" />
+	<EmbeddedResource Include="MainPage.xaml" />
     <Compile Include="App.xaml.fs" />
-    <None Include="MainPage.xaml" />
-    <None Include="App.xaml" />
+	<EmbeddedResource Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
