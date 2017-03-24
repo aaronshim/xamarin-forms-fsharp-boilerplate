@@ -40,11 +40,11 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.Portable.FSharp.Targets" />
   <ItemGroup>
-    <Compile Include="AssemblyInfo.fs" />
-    <Content Include="packages.config" />
+	<Compile Include="AssemblyInfo.fs" />
+	<Content Include="packages.config" />
 	<Compile Include="MainPage.xaml.fs" />
 	<EmbeddedResource Include="MainPage.xaml" />
-    <Compile Include="App.xaml.fs" />
+	<Compile Include="App.xaml.fs" />
 	<EmbeddedResource Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
