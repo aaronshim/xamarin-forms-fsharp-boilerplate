@@ -61,3 +61,12 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# linguist behavior
+# 
+# Do not count the platform-specific projects in the language statistics.
+###############################################################################
+HelloFSharp/HelloFSharp.Android/* linguist-vendored
+HelloFSharp/HelloFSharp.iOS/*     linguist-vendored
+HelloFSharp/HelloFSharp.UWP/*     linguist-vendored
