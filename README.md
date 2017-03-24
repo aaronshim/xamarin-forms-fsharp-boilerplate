@@ -43,7 +43,25 @@ rather than the VS 2017 generated default
 ```
 <None Include="Blah.xaml" />
 ```
-otherwise, your XAML will not compile properly. Also, make sure that the line for `MainPage.xaml` comes before `App.xaml` in the `.fsproj` file because I had problems getting it to build, since `App.xaml` does depend on elements in `MainPage.xaml`.
+otherwise, your XAML will not compile properly. Also, make sure that the line for `MainPage.xaml` comes before `App.xaml` in the `.fsproj` file because I had problems getting it to build, since `App.xaml` does depend on elements in `MainPage.xaml`. If you are feeling fancier, we can also use a configuration more like the generated `.csproj` configuration as such:
+```
+  <ItemGroup>
+    ...
+    <Compile Include="Blah.xaml.fs" >
+	  <DependentUpon>Blah.xaml</DependentUpon>
+    </Compile>
+	...
+  </ItemGroup>
+  <ItemGroup>
+    ...
+    <EmbeddedResource Include="Blah.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+	...
+  </ItemGroup>
+```
+where you can split out the `.xaml.fs` and the `.xaml` files into two different `<ItemGroup />`. In terms of ordering, at least in my experimentation, I found that ordering in the first group, with the `.xaml.fs` files, **does matter**, at least in the sense that all the pages that `App.xaml` depends on must come before it. In the second group, ordering does not matter, most likely since they will be compiled in order due to the `<DependentUpon />` tag in the first group.
 
 - After re-naming your PCL, Visual Studio's IntelliSense might not be happy with the namespace name change and generate angry red scribbles all over your document. This is because previously built `.dll` files might have not been cleaned. You can manually go through and delete all `obj` and `bin` folders, or you can take the approach suggested in [this repo](https://github.com/moljac/Samples.Xamarin.Forms/blob/master/tutorial-samples/readme.md) and add an automated MSBuild cleaning action in the `fsproj` file:
 ```
