@@ -134,8 +134,8 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloFSharp\HelloFSharp.csproj">
-      <Project>{98a00713-19c7-4dc6-99f4-64cd732a946e}</Project>
+    <ProjectReference Include="..\HelloFSharp\HelloFSharp.fsproj">
+      <Project>{6b299cfb-e914-4cf3-be5d-62ba9e94a7bc}</Project>
       <Name>HelloFSharp</Name>
     </ProjectReference>
   </ItemGroup>
